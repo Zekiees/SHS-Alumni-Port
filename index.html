@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHS Alumni Tracking System</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Education",
+  "name": "Limay Senior High School",
+  "url": "https://yourwebsite.com",
+  "logo": "https://yourwebsite.com/../img/Limay_Senior_High_School.png"
+}
+</script> 
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="grid-item header-main">
+    <div class="header-logo">
+      <img src="../img/Limay_Senior_High_School.png" alt="Limay Senior High School Logo">
+    </div>
+    <div>
+      <h1>Senior High Alumni Tracking System</h1>
+      <p>Limay Senior High School &nbsp;·&nbsp; Keeping Alumni Connected</p>
+    </div>
+  </header>
+
+  <!-- SIDEBAR NAV -->
+  <nav class="grid-item menu">
+    <ul>
+      <li><a href="#registration">📝 Registration</a></li>
+      <li><a href="#survey">📋 Tracer Survey</a></li>
+      <li><a href="#search">🔍 Search Alumni</a></li>
+      <li><a href="#news">📰 News Feed</a></li>
+      <li><a href="#analytics">📊 Analytics</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="grid-item main-content">
+
+    <!-- REGISTRATION -->
+    <section id="registration">
+      <h2>Alumni Registration</h2>
+      <form id="regForm" autocomplete="off">
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="e.g. Juan dela Cruz" required>
+          </div>
+          <div class="form-group">
+            <label for="batch">Batch Year</label>
+            <input type="number" id="batch" placeholder="e.g. 2024" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="strand">Strand Graduated</label>
+            <select id="strand">
+              <option value="STEM">STEM</option>
+              <option value="ABM">ABM</option>
+              <option value="HUMSS">HUMSS</option>
+              <option value="GAS">GAS</option>
+              <option value="TVL">TVL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="status">Current Status</label>
+            <select id="status">
+              <option value="College">College</option>
+              <option value="Employed">Employed</option>
+              <option value="Vocational">Vocational</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <button type="button" id="btnRegister" class="btn btn-primary">Create Profile</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- TRACER SURVEY -->
+    <section id="survey">
+      <h2>Tracer Survey</h2>
+      <form id="surveyForm">
+        <p class="survey-question">Is your current course or job related to your SHS strand?</p>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="related" value="Yes"> Yes
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="related" value="No"> No
+          </label>
+        </div>
+        <button type="button" id="btnSurvey" class="btn btn-gold">Submit Survey</button>
+      </form>
+    </section>
+
+    <!-- SEARCH -->
+    <section id="search">
+      <h2>Search Alumni</h2>
+      <div class="search-bar">
+        <input type="text" id="searchQuery" placeholder="Search by name, batch year, strand, or status...">
+        <button type="button" id="btnSearch" class="btn btn-primary">Search</button>
+      </div>
+      <table id="alumniTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Batch</th>
+            <th>Strand</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </section>
+
+    <!-- NEWS FEED -->
+    <section id="news">
+      <h2>News Feed</h2>
+      <div class="news-grid">
+        <div class="feed-item">
+          <div class="feed-tag">Event</div>
+          <h3>Grand Homecoming 2026</h3>
+          <p>We invite all alumni to celebrate at the Grand Homecoming event this March. Reconnect with batchmates and former teachers!</p>
+        </div>
+        <div class="feed-item">
+          <div class="feed-tag">Job Opening</div>
+          <h3>Junior Web Developer</h3>
+          <p>Local Tech Corp is looking for TVL-ICT graduates. Competitive salary with on-the-job training provided.</p>
+        </div>
+        <div class="feed-item">
+          <div class="feed-tag">Achievement</div>
+          <h3>STEM Batch 2023 Scholar</h3>
+          <p>Congratulations to Eisley Fuentes for receiving a CHED scholarship for the upcoming academic year!</p>
+        </div>
+        <div class="feed-item">
+          <div class="feed-tag">Announcement</div>
+          <h3>Alumni Tracer Survey Open</h3>
+          <p>All graduates from 2020-2025 are encouraged to fill out the annual tracer survey.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section id="analytics">
+      <h2>Data Analytics Dashboard</h2>
+      <div class="analytics-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="statTotal">0</div>
+          <div class="stat-label">Total Alumni</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statCollege">0</div>
+          <div class="stat-label">In College</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statEmployed">0</div>
+          <div class="stat-label">Employed</div>
+        </div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-row">
+          <span class="progress-label">College</span>
+          <div class="progress-track"><div class="progress-fill college" id="fill-college" style="width:0%"></div></div>
+          <span class="progress-pct" id="pct-college">0%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Employed</span>
+          <div class="progress-track"><div class="progress-fill employed" id="fill-employed" style="width:0%"></div></div>
+          <span class="progress-pct" id="pct-employed">0%</span>
+        </div>
+        <div class="progress-row">
+          <span class="progress-label">Vocational</span>
+          <div class="progress-track"><div class="progress-fill vocational" id="fill-vocational" style="width:0%"></div></div>
+          <span class="progress-pct" id="pct-vocational">0%</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="grid-item footer">
+    <p>© 2026 Limay Senior High School · Alumni Tracking System · All rights reserved.</p>
+  </footer>
+
+</div>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
